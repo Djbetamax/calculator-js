@@ -1,9 +1,9 @@
-# calculato-js
+# calculator-js
 
-Um projeto simples utilizando <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" height= "20px" alt="html5">, <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" height="20px" alt="css3"> e <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" height="20px" alt="javascript">.
+It is a project based on <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" width="70px" alt="html5">, <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" width="60px" alt="css3"> and <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" width="100px" alt="javascript"> languages.
 
-Na estrutura HTML utilizei div, tabelas e butões como base.
+On **HTML** structure was used divs tables and buttons.
 
-No CSS utilizei
+In **CSS** structure was used a simple design and functionality with pseudo-classes and pseudo-elements.
 
-E no JS utilizei funcções para armazenar as funcionalidadeds necessárias para a calculadora.
+And on **Javascript**...
