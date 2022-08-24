@@ -1,88 +1,52 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora</title>
-        <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
-        <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="calculator">
-        <p>@8Dev</p>
-            <div class="display"></div>
-        <div class="keys">
-            <table>
-                <tbody>
-                    <tr class="first_line">
-                        <td>
-                            <button class="btn_C">C</button>
-                        </td>
-                        <td>
-                            <button id="oprt_mult" >&times;</button>
-                        </td>
-                        <td>
-                            <button id="oprt_div" >÷</button>
-                        </td>
-                        <td>
-                            <button class="btn_back">←</button>
-                        </td>
-                    </tr>
-                    <tr class="second_line">
-                        <td>
-                            <button class="btn_7">7</button>
-                        </td>
-                        <td>
-                            <button class="btn_8">8</button>
-                        </td>
-                        <td>
-                            <button class="btn_9">9</button>
-                        </td>
-                        <td>
-                            <button id="oprt_sum">+</button>
-                        </td>
-                    </tr>
-                    <tr class="third_line">
-                        <td>
-                            <button class="btn_4">4</button>
-                        </td>
-                        <td>
-                            <button class="btn_5">5</button>
-                        </td>
-                        <td>
-                            <button class="btn_6">6</button>
-                        </td>
-                        <td>
-                            <button id="oprt_sub">-</button>
-                        </td>
-                    </tr>
-                    <tr class="fourth_line">
-                        <td>
-                            <button class="btn_1">1</button>
-                        </td>
-                        <td>
-                            <button class="btn_2">2</button>
-                        </td>
-                        <td>
-                            <button class="btn_3">3</button>
-                        </td>
-                        <td rowspan="2">
-                            <button class="btn_equal">=</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <button class="btn_0">0</button>
-                        </td>
-                        <td>
-                            <button class="btn_coma">.</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+  <div class="calculator-container">
+    <p>@8dev</p>
+  <div class="display"></div>
+    <div class="keys">
+      <table>
+        <tbody>
+          <tr class="first-line">
+            <td><button class="btn-C">C</button></td>
+            <td><button id="oprt-mult">&times;</button></td>
+            <td><button id="oprt-div">÷</button></td>
+            <td><button class="btn-back">←</button></td>
+          </tr> 
+          <tr class="second-line">
+            <td><button class="btn-7">7</button></td>
+            <td><button class="btn-8">8</button></td>
+            <td><button class="btn-9">9</button></td>
+            <td><button class="oprt-sum">+</button></td>
+          </tr>
+          <tr class="third-line">
+            <td><button class="btn-4">4</button></td>
+            <td><button class="btn-5">5</button></td>
+            <td><button class="btn-6">6</button></td>
+            <td><button class="oprt-sub">-</button></td>
+          </tr>
+          <tr class="fourth-line">
+            <td><button class="btn-1">1</button></td>
+            <td><button class="btn-2">2</button></td>
+            <td><button class="btn-3">3</button></td>
+            <td rowspan="2"><button class="btn-equal">=</button></td>
+          </tr>
+          <tr class="fifith-line">
+            <td colspan="2"><button class="btn-0">0</button></td>
+            <td><button class="btn-coma">,</button></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-<script src="app.js"></script>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
