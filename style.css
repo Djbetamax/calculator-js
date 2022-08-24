@@ -14,14 +14,17 @@ body {
 
 p {
   font-weight: 700;
+  cursor: default;
 }
 
-.calculator {
+.calculator-container {
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  align-items: center ;
+  align-items: center;
+  border-radius: 15px;
+  background-color: brown;
   width: 350px;
   height: auto;
   margin: auto;
@@ -46,14 +49,14 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(137, 102, 102, 0.75);
+  background-color: rgba(137, 102, 102, 0.5);
   width: 95%;
   padding: 10px;
   border-radius: 10px;
   margin: 5px;
 }
 
-/** BUTTONS **/
+/* * BUTTONS * */
 button {
   display: flex;
   justify-content: center;
@@ -63,24 +66,24 @@ button {
   border-radius: 10px;
   color: white;
   background-color: rgb(0, 0, 0);
-  box-shadow: 0 0 5px 1px rgb(32, 0, 0, 0.5);
+  box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.5);
   font-size: 38px;
   padding: 10px;
   margin: 5px;
   width: 50px;
-  transition: color 500ms;
+  transition: color .5s, opacity .75s;
+  cursor: pointer;
 }
 
 button:active {
-  color: rgb(137, 102, 102, 0.75);
-  transition: color 50ms;
+  color: rgb(137, 102, 102, 0.8);
+  opacity: 0.8;
 }
 
-.btn_0 {
+.btn-0 {
   width: 90%;
 }
 
-.btn_equal{
+.btn-equal{
   height: 148px;
 }
-
