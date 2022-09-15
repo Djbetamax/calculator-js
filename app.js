@@ -1,24 +1,109 @@
-// Pega o número precionado e mostra no display
-const calculator = document.getElementById('calculator');
-const keys = document.getAnimations('keys')
-const display = document.querySelector('display')
+const calculator = {
+  displayValue: '0',
+  firstOperand: null,
+  waitingForSecondOperand: false,
+  operator: null,
+};
 
+function inputDigit(digit) {
+  const { displayValue, waitingForSecondOperand } = calculator;
+  if (waitingForSecondOperand === true) {
+    calculator.displayValue = digit;
+    calculator.waitingForSecondOperand = false;
+  } else {
+      calculator.displayValue = displayValue === '0' ? digit : displayValue + digit;
+  }
+}
 
-// Operadores
+function inputDecimal(dot) {
+  if (calculator.waitingForSecondOperand === true) {
+    calculator.displayValue = '0';
+    calculator.waitingForSecondOperand = false;
+    return;
+  } else if (!calculator.displayValue.includes(dot)) {
+      calculator.displayValue += dot;
+    }
+}
 
-  // Soma
+function handleOperator(nextOperator) {
+  const { firstOperand, displayValue, operator } = calculator;
+  const inputValue = parseFloat(displayValue);
 
+  if (operator && calculator.waitingForSecondOperand) {
+    calculator.operator = nextOperator;
 
-  // Subtração
+    console.log(calculator);
+    return;
+  } else if (firstOperand === null && !isNaN(inputValue)) {
+      calculator.firstOperand = inputValue;
+  } else if (operator) {
+      const result = calculate(firstOperand, inputValue, operator);
 
+      calculator.displayValue = `${ parseFloat(result.toFixed(7)) }`;
+      calculator.firstOperand = result;
+  }
 
-  // Multiplicação
+  calculator.waitingForSecondOperand = true;
+  calculator.operator = nextOperator;
+}
 
+function calculate (firstOperand, secondOperand, operator) {
+  if (operator === '+') {
+    return firstOperand + secondOperand;
+  } else if (operator === '-') {
+      return firstOperand - secondOperand;
+  } else if (operator === '*') {
+      return firstOperand * secondOperand;
+  } else if (operator === '÷') { 
+      return firstOperand / secondOperand;
+  }
+  return secondOperand;
+}
 
-  // Divisão
-  
+// TODO function backValue () {
 
-//? Pega os números junto com o operador e joga no display
+// }
 
-//? Resultado
+function resetCalculator () {
+  calculator.displayValue = '0';
+  calculator.firstOperand = null;
+  calculator.waitingForSecondOperand = false;
+  calculator.operator = null;
+}
 
+function updateDisplay() {
+  const display = document.querySelector('.display');
+  display.value = calculator.displayValue;
+}
+updateDisplay();
+
+const keys = document.querySelector('.keys');
+keys.addEventListener('click', ev => {
+  const { target } = ev;
+  const { value } = target;
+
+  if (!target.matches('button')) {
+    return;
+  } switch (value) {
+      case '+':
+      case '-':
+      case '*':
+      case '÷':
+      case '=':
+        handleOperator(value)
+        break;
+      case '.':
+        inputDecimal(value);
+        break;
+      case 'clear':
+        break;
+      case 'all-clear':
+        resetCalculator(value);
+        break;
+      default:
+        if (Number.isInteger(parseFloat(value))) {
+          inputDigit(target.value);
+        }
+      }  
+    updateDisplay();
+});
